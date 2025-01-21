@@ -1,0 +1,3 @@
+FROM public.ecr.aws/hashicorp/terraform:1.9 AS TF
+FROM public.ecr.aws/docker/library/alpine:3
+COPY --from=TF /bin/terraform /bin/terraform

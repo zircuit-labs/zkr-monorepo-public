@@ -1,0 +1,16 @@
+[
+  {
+    "bytes": "20",
+    "label": "bridge",
+    "offset": 0,
+    "slot": "0",
+    "type": "address"
+  },
+  {
+    "bytes": "1568",
+    "label": "__gap",
+    "offset": 0,
+    "slot": "1",
+    "type": "uint256[49]"
+  }
+]

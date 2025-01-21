@@ -1,0 +1,30 @@
+[
+  {
+    "bytes": "32",
+    "label": "sentMessages",
+    "offset": 0,
+    "slot": "0",
+    "type": "mapping(bytes32 => bool)"
+  },
+  {
+    "bytes": "30",
+    "label": "msgNonce",
+    "offset": 0,
+    "slot": "1",
+    "type": "uint240"
+  },
+  {
+    "bytes": "384",
+    "label": "ethThrottleWithdrawals",
+    "offset": 0,
+    "slot": "2",
+    "type": "struct TransferThrottle.Throttle"
+  },
+  {
+    "bytes": "20",
+    "label": "accessController",
+    "offset": 0,
+    "slot": "14",
+    "type": "contract AccessControlPausable"
+  }
+]

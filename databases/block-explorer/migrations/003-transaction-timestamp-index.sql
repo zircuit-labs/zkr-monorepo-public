@@ -1,0 +1,1 @@
+CREATE INDEX CONCURRENTLY idx_transactions_timestamp ON block_explorer."Transactions" (timestamp);

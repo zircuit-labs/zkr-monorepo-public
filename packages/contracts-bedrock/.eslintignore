@@ -1,0 +1,12 @@
+# Deps and test files
+node_modules
+lib
+built
+
+# build output
+artifacts
+forge-artifacts
+cache
+typechain
+coverage*
+deployments

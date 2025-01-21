@@ -1,0 +1,100 @@
+
+# devnet settings
+
+# ARGS file for environment variables to inject into the build process
+# This file should list all available settings, even if unused.
+
+# docker-compose profile(s)
+# uncomment to enable replicas
+# COMPOSE_PROFILES="replica"
+
+# logging (applies only to op services)
+# debug, info (default), warn, error
+LOG_LEVEL="info"
+
+# metrics served on 0.0.0.0:7300
+METRICS_ENABLED=false
+
+# pprof served on 0.0.0.0:6060
+PPROF_ENABLED=false
+
+# l1 images
+BEACON_CHAIN_GENESIS_IMAGE="gcr.io/prysmaticlabs/prysm/cmd/prysmctl:HEAD-38f208"
+GETH_IMAGE="ethereum/client-go:v1.14.0"
+PRYSM_IMAGE="gcr.io/prysmaticlabs/prysm/beacon-chain:v5.0.3"
+PRYSM_VALIDATOR_IMAGE="gcr.io/prysmaticlabs/prysm/validator:v5.0.3"
+
+#l1 fork
+FORK="deneb"
+
+# l1, l2 and op-node connections
+L1_URL_HTTP="http://l1:8545"
+L1_URL_WS="ws://l1:8546"
+L2_URL_HTTP="http://l2:8545"
+L2_URL_WS="ws://l2:8546"
+ROLLUP_RPC="http://op-node:8545"
+L1_URL_BEACON="http://beacon-chain:3500"
+
+# if set to true, perform a `geth init` on every start
+FORK_TRIGGER=false
+
+# op-node
+OP_NODE_L2_ENGINE_RPC="http://l2:8551"
+OP_NODE_ROLLUP_CONFIG="/rollup.json"
+OP_NODE_NETWORK=""
+OP_NODE_RPC_ENABLE_ADMIN=true
+OP_NODE_L1_TRUST_RPC=false
+OP_NODE_L1_RPC_KIND="basic"
+OP_NODE_L1_RPC_RATE_LIMIT=0
+OP_NODE_L1_RPC_MAX_BATCH_SIZE=20
+OP_NODE_L1_HTTP_POLL_INTERVAL="12s"
+OP_NODE_L2_ENGINE_AUTH="/config/test-jwt-secret.txt"
+OP_NODE_VERIFIER_L1_CONFS=0
+OP_NODE_SEQUENCER_ENABLED=true
+OP_NODE_SEQUENCER_STOPPED=false
+OP_NODE_SEQUENCER_MAX_SAFE_LAG=0
+OP_NODE_SEQUENCER_L1_CONFS=0
+OP_NODE_L1_EPOCH_POLL_INTERVAL="384s"
+OP_NODE_SNAPSHOT_LOG="/op_log/snapshot.log"
+OP_NODE_HEARTBEAT_ENABLED=false
+OP_NODE_HEARTBEAT_MONIKER=""
+OP_NODE_HEARTBEAT_URL=""
+OP_NODE_L2_BACKUP_UNSAFE_SYNC_RPC=""
+OP_NODE_L2_BACKUP_UNSAFE_SYNC_RPC_TRUST_RPC=""
+# enable blobs
+OP_NODE_SYNCMODE="consensus-layer"
+
+# op-node replica
+OP_NODE_REPLICA_L2_ENGINE_RPC="http://l2-replica:8551"
+OP_NODE_REPLICA_L2_ENGINE_AUTH="/config/test-jwt-secret-replica.txt"
+OP_NODE_REPLICA_SEQUENCER_ENABLED=false
+
+# op-node/p2p
+OP_NODE_P2P_SEQUENCER_KEY="8b3a350cf5c34c9194ca85829a2df0ec3153be0318b5e2d3348e872092edffba"
+OP_NODE_P2P_PEER_SCORING="light"
+OP_NODE_P2P_PEER_BANNING=true
+SEQUENCER_ROLLUP_HOSTNAME="op-node"
+SEQUENCER_ROLLUP_DISCOVERY_PORT=9003
+OP_NODE_P2P_PRIV_PATH="/config/p2p-node-key.txt"
+
+# op-batcher and op-proposer
+MNEMONIC="test test test test test test test test test test test junk"
+
+# op-batcher
+OP_BATCHER_SUB_SAFETY_MARGIN=4
+OP_BATCHER_POLL_INTERVAL="1s"
+# post batches to L1 every ~1.5 minutes for devnet (denominated in number of L1 blocks)
+OP_BATCHER_MAX_CHANNEL_DURATION=8
+# will be overwritten if using blobs
+OP_BATCHER_MAX_L1_TX_SIZE_BYTES=120000
+OP_BATCHER_NUM_CONFIRMATIONS=1
+OP_BATCHER_RPC_ENABLE_ADMIN=true
+# singular batches
+OP_BATCHER_BATCH_TYPE=0
+# use blobs, not calldata
+OP_BATCHER_DATA_AVAILABILITY_TYPE="blobs"
+# target number of frames per channel OR number of blobs per blob tx
+OP_BATCHER_TARGET_NUM_FRAMES=1
+
+# eth analytics
+ETH_ANALYTICS_BRIDGE="0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0"

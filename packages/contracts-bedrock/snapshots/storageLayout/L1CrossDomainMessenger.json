@@ -1,0 +1,58 @@
+[
+  {
+    "bytes": "32",
+    "label": "successfulMessages",
+    "offset": 0,
+    "slot": "0",
+    "type": "mapping(bytes32 => bool)"
+  },
+  {
+    "bytes": "20",
+    "label": "xDomainMsgSender",
+    "offset": 0,
+    "slot": "1",
+    "type": "address"
+  },
+  {
+    "bytes": "30",
+    "label": "msgNonce",
+    "offset": 0,
+    "slot": "2",
+    "type": "uint240"
+  },
+  {
+    "bytes": "32",
+    "label": "failedMessages",
+    "offset": 0,
+    "slot": "3",
+    "type": "mapping(bytes32 => bool)"
+  },
+  {
+    "bytes": "20",
+    "label": "otherMessenger",
+    "offset": 0,
+    "slot": "4",
+    "type": "contract CrossDomainMessenger"
+  },
+  {
+    "bytes": "1312",
+    "label": "__gap",
+    "offset": 0,
+    "slot": "5",
+    "type": "uint256[41]"
+  },
+  {
+    "bytes": "20",
+    "label": "superchainConfig",
+    "offset": 0,
+    "slot": "46",
+    "type": "contract SuperchainConfig"
+  },
+  {
+    "bytes": "20",
+    "label": "portal",
+    "offset": 0,
+    "slot": "47",
+    "type": "contract OptimismPortal"
+  }
+]

@@ -1,0 +1,15 @@
+# don't include any local .testdata since it might use outdated data then
+packages/contracts-bedrock/.testdata
+packages/contracts-bedrock/scripts/go-ffi/go-ffi
+
+# generated docs
+docs/contract_addresses.md
+
+# devnet artifacts
+packages/contracts-bedrock/deployments/devnetL1
+packages/contracts-bedrock/deploy-config/devnetL1.json
+
+# foundry artifacts
+packages/contracts-bedrock/forge-artifacts
+packages/contracts-bedrock/cache
+packages/contracts-bedrock/broadcast

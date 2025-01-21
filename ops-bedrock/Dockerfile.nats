@@ -1,0 +1,5 @@
+FROM public.ecr.aws/docker/library/nats:2-alpine AS default
+
+RUN apk --update --no-cache add curl jq
+COPY nats.conf /var/nats.conf
+CMD ["nats-server"]

@@ -1,0 +1,1 @@
+ALTER TABLE block_explorer."Transactions" ADD l1_fee varchar NULL;

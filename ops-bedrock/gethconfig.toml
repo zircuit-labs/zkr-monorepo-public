@@ -1,0 +1,17 @@
+[Eth.SLSConfig]
+Enabled = true
+EnableZircAPI = true
+EnableZircAdminAPI = true
+AlwaysAllowEmptyTransaction = false
+# deny any deposits or regular l2 transactions by the test mnemonic account at index 8
+# cast wallet address --mnemonic "test test test test test test test test test test test junk" --mnemonic-index 8
+ExecutorInterval = "1s"
+QuarantineDuration = "5m"
+IntegrityDBSyncInterval = "30s"
+[Eth.SLSConfig.PoolTx]
+RetryCount = 5
+Timeout = "4s"
+BaseDelay = "200ms"
+[Eth.SLSConfig.DepositTx]
+RetryCount = 0
+Timeout = "800ms"

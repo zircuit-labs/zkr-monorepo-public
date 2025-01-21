@@ -1,0 +1,37 @@
+[
+  {
+    "bytes": "20",
+    "label": "messenger",
+    "offset": 0,
+    "slot": "0",
+    "type": "contract CrossDomainMessenger"
+  },
+  {
+    "bytes": "20",
+    "label": "otherBridge",
+    "offset": 0,
+    "slot": "1",
+    "type": "contract StandardBridge"
+  },
+  {
+    "bytes": "1472",
+    "label": "__gap",
+    "offset": 0,
+    "slot": "2",
+    "type": "uint256[46]"
+  },
+  {
+    "bytes": "32",
+    "label": "deposits",
+    "offset": 0,
+    "slot": "48",
+    "type": "mapping(address => mapping(address => mapping(uint256 => bool)))"
+  },
+  {
+    "bytes": "20",
+    "label": "superchainConfig",
+    "offset": 0,
+    "slot": "49",
+    "type": "contract SuperchainConfig"
+  }
+]
