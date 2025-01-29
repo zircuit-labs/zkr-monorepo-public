@@ -95,8 +95,6 @@ GO_BUILD_DEPENDENCIES_CMD:
     WORKDIR /src
     COPY ./go.mod /src
     COPY ./go.sum /src
-    RUN --secret GITHUB_TOKEN git config --global --replace-all url."https://x-access-token:${GITHUB_TOKEN}@github.com/zircuit-labs/".insteadOf "https://github.com/zircuit-labs/"
-    ENV GOPRIVATE=github.com/zircuit-labs
     RUN go mod download
     RUN go mod verify
     RUN go install github.com/mfridman/tparse@latest
@@ -230,7 +228,7 @@ docker-op-node:
 # This just adds `wget` and the entrypoint file to it
 # and optionally pushes that to the `l2-geth` ECR repo
 docker-l2-geth:
-    FROM ../l2-geth+docker-l2geth-no-ccc
+    FROM ../l2-geth-public+docker-l2geth-no-ccc
     ARG DOCKER_REGISTRY_URL
     ARG VERSION_TAG
     ENV GETH_MINER_RECOMMIT=2s
@@ -553,7 +551,7 @@ go-lint-golangci:
 # When this happens, check each and every diff in go.mod
 go-local-mod-update:
     LOCALLY
-    ENV GOPRIVATE="github.com/zircuit-labs" && go get -d -u ./... && go mod tidy
+    RUN go get -d -u ./... && go mod tidy
 
 # Install gofumpt locally (if needed),
 # and format all the go code nice and neat
